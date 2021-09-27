@@ -11,7 +11,18 @@ const AddUser = (props) => {
 
     const addUserHandler = (event) => {
         event.preventDefault();
+        if(enteredUsername.trim().length === 0 || 
+             enteredUserage.trim().length){
+            return;
+        }
+
+        //+ converts a string to a number
+        if(+enteredUserage < 1 ){
+            return;
+        }
         console.log(enteredUsername, enteredUserage)
+        setEnteredUserage('') //resets to empty string after lick
+        setEnteredUsername('') //resets to empty string after lick
     }
 
     const usernameChangeHanlder = (event) => {
@@ -29,12 +40,14 @@ const AddUser = (props) => {
                 <input
                     id="username" 
                     type="text"
+                    value={enteredUsername}
                     onChange={usernameChangeHanlder} />
 
                 <label htmlFor="age"> Age( Years )</label>
                 <input 
                     id="age" 
-                    type="number" 
+                    type="number"
+                    value={enteredUserage} 
                     onChange={userageChangeHanlder} />
 
                 <Button type="submit">Add User</Button>
