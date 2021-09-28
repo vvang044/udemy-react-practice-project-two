@@ -20,7 +20,8 @@ const AddUser = (props) => {
         if(+enteredUserage < 1 ){
             return;
         }
-        console.log(enteredUsername, enteredUserage)
+        // console.log(enteredUsername, enteredUserage)
+        props.onAddUser(enteredUsername, enteredUserage);
         setEnteredUserage('') //resets to empty string after lick
         setEnteredUsername('') //resets to empty string after lick
     }
