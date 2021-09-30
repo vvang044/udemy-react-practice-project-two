@@ -17,6 +17,9 @@ import UsersList from "./components/Users/UsersList";
       });
     };
   
+    //you can return ( <div>..........</div>)
+    //you can return ( <React.Fragment>..........</React.Fragment>)
+    //you can return ( <Fragment>..........</Fragment>)
     return (
       <Fragment>
         <AddUser onAddUser={addUserHandler} />
