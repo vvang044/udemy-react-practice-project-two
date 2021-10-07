@@ -48,9 +48,12 @@ const AddUser = (props) => {
     //   props.onAddUser(enteredUsername, enteredAge);
       props.onAddUser(enteredName, enteredUserAge);
       //resetting
+      //when you're using Ref's
       nameInputRef.current.value = '';
       ageInputRef.current.value = '';
 
+      //resetting
+      //when you're NOT using refs
     //   setEnteredUsername('');
     //   setEnteredAge('');
     };
